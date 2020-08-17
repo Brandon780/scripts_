@@ -1,4 +1,5 @@
-
+library(tidyverse)
+library(dslabs)
 
 
 
@@ -35,9 +36,9 @@ filter(gapminder, year %in% c(1962, 2012)) %>%
 # practica con nombres ----------------------------------------------------
 
 
-n<-datos::nombres     
+nn<-datos::nombres     
 head()
-
+nn %>%
 filter(n, nombre %in% c("Minnie", "Margaret")) %>%
   ggplot(aes(anio, n, col = sexo)) +
   geom_point() +
@@ -63,7 +64,7 @@ head(n)
 
 anios <- c( 1993,1994,1995,1996)
 nombres <- c("Elizabeth","Mary","Emma")
-gapminder %>%
+n %>%
   filter(nombre %in% nombres & anio %in% anios) %>%
   ggplot(aes(fertility, life_expectancy, col = continent)) +
   geom_point() +
